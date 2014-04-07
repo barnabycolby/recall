@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "NotesTree.h"
+
 using namespace std;
 
 // Forward declaration of printUsageInstructions
@@ -11,6 +13,12 @@ int main(int argc, char* argv[]) {
 		printUsageInstructions();
 		return 1;
 	}
+
+	// Parse the structure, and create the object tree that it corresponds to
+	NotesTree* tree = new NotesTree(argv[1]);
+
+	// Don't forget to cleanup
+	delete tree;
 }
 
 /**
