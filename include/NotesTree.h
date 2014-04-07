@@ -1,7 +1,3 @@
-#include <string>
-
-using namespace std;
-
 /**
  * \author Barnaby Colby
  * \brief Stores notes in a tree
@@ -9,5 +5,5 @@ using namespace std;
  */
 class NotesTree {
 public:
-	NotesTree(string filePath);
+	NotesTree(const char* filePath);
 };
