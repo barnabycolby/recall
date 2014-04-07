@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	// Parse the structure, and create the object tree that it corresponds to
-	NotesTree* tree = new NotesTree(argv[1]);
+	const NotesTree* tree = new NotesTree(argv[1]);
 
 	// Don't forget to cleanup
 	delete tree;
