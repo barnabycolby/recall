@@ -1,0 +1,33 @@
+<!-- The root node must have the notestree tagname -->
+<notestree>
+	<!-- Each category can contain a set of notes and/or lists that belong to it -->
+	<category>
+		<!-- The category must have a name that describes it -->
+		<name>ENTER NAME HERE</name>
+
+		<!-- The set of notes -->
+		<!-- Could also be a set of lists -->
+		<note>ENTER NOTE HERE</note>
+		<note>ENTER NOTE HERE</note>
+		<note>ENTER NOTE HERE</note>
+	</category>
+
+	<!-- The root node can contain notes as well as categories -->
+	<note>ENTER NOTE HERE</note>
+
+	<!-- And can also contain lists -->
+	<list>
+		<!-- Like a category, the list also needs a name that describes it -->
+		<name>ENTER NAME HERE</name>
+
+		<!-- A list contains a set of items, which can be "ticked off" using a checkbox system -->
+		<item>
+			<!-- The list must also have a name that describes it -->
+			<name>ENTER NAME HERE</name>
+
+			<!-- It also must contain a completed value which describes whether the note should be checked or unchecked -->
+			<!-- It's value must be either true of false (in lowercase) -->
+			<completed>ENTER VALUE HERE</completed>
+		</item>
+	</list>
+</notestree>
