@@ -9,6 +9,7 @@ int main(int argc, char* argv[]) {
 	// Check if we were given the number of arguments we expected
 	if (argc != 2) {
 		printUsageInstructions();
+		return 1;
 	}
 }
 
