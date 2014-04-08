@@ -3,6 +3,8 @@
 #include <iostream>
 #include "pugixml.hpp"
 
+#include "InvalidNotesTree.h"
+
 using namespace std;
 
 /**
@@ -13,8 +15,9 @@ using namespace std;
 NotesTree::NotesTree(const char* filePath) {
 	// Parse the xml file
 	pugi::xml_document doc;
-	if(!doc.load_file(filePath)) {
+	if (!doc.load_file(filePath)) {
 		// The document could not be parsed
 		cout << "Failed to parse " << filePath << endl;
+		throw new InvalidNotesTree("Failed to parse file");
 	}
 }
