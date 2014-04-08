@@ -1,7 +1,7 @@
 #ifndef NOTES_TREE_H
 #define NOTES_TREE_H
 
-#include "nodes/RootNode.h"
+#include "nodes/CategoryNode.h"
 
 /**
  * \author Barnaby Colby
@@ -14,7 +14,7 @@ public:
 	NotesTree(const char *filePath);
 
 private:
-	RootNode *root;
+	CategoryNode *root;
 };
 
 #endif
