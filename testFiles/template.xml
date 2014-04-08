@@ -1,12 +1,12 @@
 <!-- The root node must have the notestree tagname -->
 <notestree>
 	<!-- Each category can contain a set of notes and/or lists that belong to it -->
+	<!-- As well as other categories -->
 	<category>
 		<!-- The category must have a name that describes it -->
 		<name>ENTER NAME HERE</name>
 
 		<!-- The set of notes -->
-		<!-- Could also be a set of lists -->
 		<note>ENTER NOTE HERE</note>
 		<note>ENTER NOTE HERE</note>
 		<note>ENTER NOTE HERE</note>

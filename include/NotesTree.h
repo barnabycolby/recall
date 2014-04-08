@@ -1,6 +1,8 @@
 #ifndef NOTES_TREE_H
 #define NOTES_TREE_H
 
+#include "nodes/RootNode.h"
+
 /**
  * \author Barnaby Colby
  * \brief Stores notes in a tree
@@ -8,7 +10,11 @@
  */
 class NotesTree {
 public:
-	NotesTree(const char* filePath);
+	// Constructor
+	NotesTree(const char *filePath);
+
+private:
+	RootNode *root;
 };
 
 #endif

@@ -22,8 +22,12 @@ NotesTree::NotesTree(const char* filePath) {
 	}
 
 	// The root node should be a notestree node
-	pugi::xml_node rootNode = doc.child("notestree");
-	if (rootNode == NULL) {
+	pugi::xml_node rootXMLNode = doc.child("notestree");
+	if (rootXMLNode == NULL) {
 		throw new InvalidNotesTree("Root node was not a notestree node");
 	}
+
+	// Store the node
+	// The xyz class constructor also parses child nodes
+	this->root = new RootNode(&rootXMLNode);
 }
