@@ -1,3 +1,6 @@
+#ifndef NOTES_TREE_H
+#define NOTES_TREE_H
+
 /**
  * \author Barnaby Colby
  * \brief Stores notes in a tree
@@ -7,3 +10,5 @@ class NotesTree {
 public:
 	NotesTree(const char* filePath);
 };
+
+#endif
