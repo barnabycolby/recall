@@ -20,4 +20,10 @@ NotesTree::NotesTree(const char* filePath) {
 		cout << "Failed to parse " << filePath << endl;
 		throw new InvalidNotesTree("Failed to parse file");
 	}
+
+	// The root node should be a notestree node
+	pugi::xml_node rootNode = doc.child("notestree");
+	if (rootNode == NULL) {
+		throw new InvalidNotesTree("Root node was not a notestree node");
+	}
 }
