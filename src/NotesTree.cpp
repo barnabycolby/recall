@@ -29,5 +29,5 @@ NotesTree::NotesTree(const char* filePath) {
 
 	// Store the node
 	// The xyz class constructor also parses child nodes
-	this->root = new CategoryNode(&rootXMLNode);
+	this->root = new ContainerNode(&rootXMLNode);
 }
