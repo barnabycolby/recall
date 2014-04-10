@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "NotesTree.h"
+#include "RecallModel.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	// Parse the structure, and create the object tree that it corresponds to
-	const NotesTree* tree = new NotesTree(argv[1]);
+	const RecallModel* tree = new RecallModel(argv[1]);
 
 	// Don't forget to cleanup
 	delete tree;

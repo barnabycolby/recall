@@ -8,10 +8,10 @@
  * \brief Stores notes in a tree
  * \details Stores note objects in a hierarchical tree-like structure, where notes are divided into categories
  */
-class NotesTree {
+class RecallModel {
 public:
 	// Constructor
-	NotesTree(const char *filePath);
+	RecallModel(const char *filePath);
 
 private:
 	ContainerNode *root;
