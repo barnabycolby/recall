@@ -1,5 +1,5 @@
-#ifndef NOTES_TREE_H
-#define NOTES_TREE_H
+#ifndef RECALL_MODEL_H
+#define RECALL_MODEL_H
 
 #include "nodes/ContainerNode.h"
 
