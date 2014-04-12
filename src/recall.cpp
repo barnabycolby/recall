@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "RecallModel.h"
+#include "RecallView.h"
 
 using namespace std;
 
@@ -15,10 +16,14 @@ int main(int argc, char* argv[]) {
 	}
 
 	// Parse the structure, and create the object tree that it corresponds to
-	const RecallModel* tree = new RecallModel(argv[1]);
+	const RecallModel* recallModel = new RecallModel(argv[1]);
+	
+	// Create the view
+	const RecallView* recallView = new RecallView(recallModel);
 
 	// Don't forget to cleanup
-	delete tree;
+	delete recallModel;
+	delete recallView;
 }
 
 /**
