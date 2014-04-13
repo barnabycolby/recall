@@ -9,10 +9,14 @@ RecallView::RecallView(const RecallModel *recallModel)
 {
 	// Initialise SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-		std::ostringstream oss;
-		oss << "SDL_Init Error: " << SDL_GetError();
-		throw new RecallViewException(oss.str());
+		this->throwSDLError("SDL_Init Error");
 	}
+}
+
+void RecallView::throwSDLError(string message) {
+	std::ostringstream oss;
+	oss << message << ": " << SDL_GetError();
+	throw new RecallViewException(oss.str());
 }
 
 RecallView::~RecallView() {

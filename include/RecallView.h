@@ -14,8 +14,12 @@ public:
 	~RecallView();
 
 private:
+	void throwSDLError(string msg);
+
+private:
 	const RecallModel *model;
 	SDL_Window *window;
+	SDL_Renderer *renderer;
 };
 
 #endif
