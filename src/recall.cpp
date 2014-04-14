@@ -1,4 +1,5 @@
 #include <iostream>
+#include <QtWidgets/QApplication>
 
 #include "RecallModel.h"
 #include "RecallView.h"
@@ -19,11 +20,19 @@ int main(int argc, char* argv[]) {
 	const RecallModel* recallModel = new RecallModel(argv[1]);
 	
 	// Create the view
+	QApplication *qApplication = new QApplication(argc, argv);
 	const RecallView* recallView = new RecallView(recallModel);
+
+	// Execute the application
+	int returnValue = qApplication->exec();
 
 	// Don't forget to cleanup
 	delete recallModel;
 	delete recallView;
+	delete qApplication;
+
+	// Return
+	return returnValue;
 }
 
 /**

@@ -1,28 +1,22 @@
 #include "RecallView.h"
 
-#include <sstream>
+#include <QtCore/QThread>
+#include <QtGui/QPainter>
 
 #include "RecallViewException.h"
 
 RecallView::RecallView(const RecallModel *recallModel)
-: model(recallModel)
+: QWidget(0), model(recallModel)
 {
-	// Initialise SDL
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
-		this->throwSDLError("SDL_Init Error");
-	}
+	this->setAttribute(Qt::WA_TranslucentBackground);
+	this->showFullScreen();
 }
 
-void RecallView::throwSDLError(string message) {
-	std::ostringstream oss;
-	oss << message << ": " << SDL_GetError();
-	throw new RecallViewException(oss.str());
-}
+void RecallView::paintEvent(QPaintEvent *) {
+	QPainter painter(this);
+	painter.setRenderHint(QPainter::Antialiasing);
+	painter.setPen(Qt::NoPen);
+	painter.setBrush(QColor(200, 200, 200, 200));
 
-RecallView::~RecallView() {
-	// Destroy the window
-	SDL_DestroyWindow(this->window);
-
-	// Quit SDL
-	SDL_Quit();
+	painter.drawRect(0, 0, this->width(), this->height());
 }

@@ -1,25 +1,20 @@
 #ifndef RECALL_VIEW_H
 #define RECALL_VIEW_H
 
-#include <SDL2/SDL.h>
-
 #include "RecallModel.h"
 
-class RecallView {
+#include <QtWidgets/QWidget>
+
+class RecallView : public QWidget {
 public:
 	// Constructor
 	RecallView(const RecallModel *recallModel);
 
-	// Destructor
-	~RecallView();
-
-private:
-	void throwSDLError(string msg);
+protected:
+	virtual void paintEvent(QPaintEvent *paintEvent);
 
 private:
 	const RecallModel *model;
-	SDL_Window *window;
-	SDL_Renderer *renderer;
 };
 
 #endif
