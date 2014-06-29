@@ -17,11 +17,11 @@ int main(int argc, char* argv[]) {
 	}
 
 	// Parse the structure, and create the object tree that it corresponds to
-	const RecallModel* recallModel = new RecallModel(argv[1]);
+	RecallModel* recallModel = new RecallModel(argv[1]);
 	
 	// Create the view
 	QApplication *qApplication = new QApplication(argc, argv);
-	const RecallView* recallView = new RecallView(recallModel);
+	RecallView* recallView = new RecallView(recallModel);
 
 	// Execute the application
 	int returnValue = qApplication->exec();

@@ -8,13 +8,13 @@
 class RecallView : public QWidget {
 public:
 	// Constructor
-	RecallView(const RecallModel *recallModel);
+	RecallView(RecallModel *recallModel);
 
 protected:
 	virtual void paintEvent(QPaintEvent *paintEvent);
 
 private:
-	const RecallModel *model;
+	RecallModel *model;
 };
 
 #endif

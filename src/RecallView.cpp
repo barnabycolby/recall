@@ -3,9 +3,7 @@
 #include <QtCore/QThread>
 #include <QtGui/QPainter>
 
-#include "RecallViewException.h"
-
-RecallView::RecallView(const RecallModel *recallModel)
+RecallView::RecallView(RecallModel *recallModel)
 : QWidget(0), model(recallModel)
 {
 	this->setAttribute(Qt::WA_TranslucentBackground);
@@ -16,7 +14,7 @@ void RecallView::paintEvent(QPaintEvent *) {
 	QPainter painter(this);
 	painter.setRenderHint(QPainter::Antialiasing);
 	painter.setPen(Qt::NoPen);
-	painter.setBrush(QColor(200, 200, 200, 200));
+	painter.setBrush(QColor(255, 255, 255, 150));
 
 	painter.drawRect(0, 0, this->width(), this->height());
 }
