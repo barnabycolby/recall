@@ -11,6 +11,8 @@ class RecallModel {
 public:
 	RecallModel(char *modelFile);
 
+	vector<Node*> *getNodes();
+
 private:
 	void addChild(Node *childNode);
 	vector<Node*> *nodes;

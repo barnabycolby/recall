@@ -13,6 +13,9 @@ class NoteNode : public Node
 public:
 	NoteNode(rapidxml::xml_node<> *xmlNode);
 
+	NodeType getType();
+	string *getNote();
+
 private:
 	string *note;
 };

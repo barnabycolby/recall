@@ -38,3 +38,7 @@ RecallModel::RecallModel(char *modelFile)
 void RecallModel::addChild(Node *childNode) {
 	this->nodes->push_back(childNode);
 }
+
+vector<Node*> *RecallModel::getNodes() {
+	return this->nodes;
+}
