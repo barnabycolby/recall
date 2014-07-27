@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "nodes/NoteNode.h"
+#include "nodes/ListNode.h"
 
 RecallView::RecallView(RecallModel *recallModel)
 : QWidget(0), model(recallModel)
@@ -50,6 +51,37 @@ void RecallView::paintEvent(QPaintEvent *) {
 			QString qtext(text.c_str());
 			painter.drawText(x, y, width, height, Qt::AlignCenter, qtext);
 		}
-	}
 
+		if (type == LIST) {
+			// Cast the node to a listnode
+			ListNode *list = (ListNode*)node;
+
+			// Draw the square background
+			painter.setBrush(QColor(0, 0, 255, 150));
+			int x = (i * nodeWidth) + (0.1 * nodeWidth);
+			int y = 10;
+			int width = nodeWidthWithPadding;
+			int height = nodeHeightWithPadding;
+			painter.drawRect(x, y, width, height);
+
+			// Draw the title text
+			int numberOfSections = 1 + list->numberOfItems();
+			painter.setPen(QColor(0, 0, 0, 150));
+			string text = list->getName();
+			QString qtext(text.c_str());
+			painter.drawText(x, y, width, height/numberOfSections, Qt::AlignCenter, qtext);
+
+			// Draw the item text
+			vector<ListItem*> *items = list->getItems();
+			for (int i = 0; i < items->size(); i++) {
+				ListItem* item = items->at(i);
+				int y = 10 + ((height/numberOfSections)*(i+1));
+
+				string completedText = item->isCompleted() ? "x " : "o ";
+				string itemText = completedText + item->getText();
+				QString qtext(itemText.c_str());
+				painter.drawText(x, y, width, height/numberOfSections, Qt::AlignCenter, qtext);
+			}
+		}
+	}
 }

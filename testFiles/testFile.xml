@@ -3,4 +3,16 @@
 	<note>Fuss the cats</note>
 	<note>Change the lightbulb</note>
 	<note>Book an appointment with the dentist</note>
+
+	<list>
+		<name>TODO List</name>
+		<item>
+			<name>Jailbreak iPad</name>
+			<completed>true</completed>
+		</item>
+		<item>
+			<name>Watch PKA</name>
+			<completed>false</completed>
+		</item>
+	</list>
 </notestree>

@@ -1,7 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-enum NodeType { NOTE };
+enum NodeType { NOTE, LIST };
 
 class Node {
 public:

@@ -6,6 +6,7 @@
 #include <cstring>
 
 #include "nodes/NoteNode.h"
+#include "nodes/ListNode.h"
 
 RecallModel::RecallModel(char *modelFile)
 : nodes(new vector<Node*>())
@@ -29,7 +30,7 @@ RecallModel::RecallModel(char *modelFile)
 			this->addChild(new NoteNode(child));
 		}
 		else if (strcmp(nodeType, "list") == 0) {
-//			this->addChild(new ListNode(child));
+			this->addChild(new ListNode(child));
 		}
 		child = child->next_sibling();
 	}
